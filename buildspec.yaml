@@ -5,3 +5,5 @@ phases:
     commands:
       - mvn clean install
       - ls
+      - docker build . -t myweb:v1
+      - docker images
