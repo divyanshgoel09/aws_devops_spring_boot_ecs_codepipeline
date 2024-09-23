@@ -5,5 +5,9 @@ phases:
     commands:
       - mvn clean install
       - ls
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 034362060516.dkr.ecr.ap-south-1.amazonaws.com
       - docker build . -t myweb:v1
       - docker images
+      - docker tag  myweb:v1  034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp/myweb:v1
+      - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp/myweb:v1
+      
