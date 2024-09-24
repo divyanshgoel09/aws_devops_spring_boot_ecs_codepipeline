@@ -5,3 +5,11 @@ phases:
     commands:
       - mvn clean install
       - ls
+      - echo $CODEBUILD_BUILD_NUMBER
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 034362060516.dkr.ecr.ap-south-1.amazonaws.com
+      - docker build . -t myspringapp:v$CODEBUILD_BUILD_NUMBER
+      - docker images
+      - docker tag   myspringapp:v$CODEBUILD_BUILD_NUMBER  034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER
+      - docker tag   myspringapp:v$CODEBUILD_BUILD_NUMBER  034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:latest
+      - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER
+      - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:latest
