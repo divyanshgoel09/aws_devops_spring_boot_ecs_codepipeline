@@ -24,7 +24,7 @@ phases:
       - docker tag   myspringapp:v$CODEBUILD_BUILD_NUMBER  034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:latest
       - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER
       - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:latest
-      - echo [{"name":"myspringservice","imageUri": 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER }] > imagedefinitions.json
+      - echo "[{'name':'myspringservice','imageUri': 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER }]" > imagedefinitions.json
       - cat imagedefinitions.json
 
 artifacts:
