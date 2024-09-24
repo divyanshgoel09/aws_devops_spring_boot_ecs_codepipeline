@@ -25,3 +25,6 @@ phases:
       - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:v$CODEBUILD_BUILD_NUMBER
       - docker push 034362060516.dkr.ecr.ap-south-1.amazonaws.com/myspringapp:latest
 
+artifacts:
+  files:
+    - '**/*'
