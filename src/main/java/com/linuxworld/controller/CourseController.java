@@ -65,7 +65,7 @@ public class CourseController {
 
     @GetMapping("/welcome")
     public String greetings() {
-        return "Hello LW , Workshop of Devops 3rd changes !! ";
+        return "Hello LW , Workshop of Devops FINAL changes !! ";
     }
 
 
