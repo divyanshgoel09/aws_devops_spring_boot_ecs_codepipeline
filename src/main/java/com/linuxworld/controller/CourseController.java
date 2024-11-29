@@ -65,7 +65,7 @@ public class CourseController {
 
     @GetMapping("/welcome")
     public String greetings() {
-        return "Hello LW , Workshop of Devops!! again changing 03:57pm 29-11-2024";
+        return "Hello to mySpringApp, Final changes done at 4:44pm (29-11-2024).";
     }
 
 
